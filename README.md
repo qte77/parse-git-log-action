@@ -1,5 +1,7 @@
-App Skeleton
+Parse git-log Output Github Action
 ===
+
+Thanks `claude-3-opus-20240229` and [LMSYS ChatBot Arena](https://chat.lmsys.org) for first draft.
 
 <a href="https://circleci.com/gh/badges/shields/tree/master">
     <img src="https://img.shields.io/circleci/project/github/badges/shields/master" alt="build status">
