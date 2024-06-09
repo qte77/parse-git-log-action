@@ -1,0 +1,17 @@
+# YAML 1.2
+cff-version: 1.1.0
+message: "If you use this software, please cite it using these metadata."
+authors:
+  - affiliation: ""
+    family-names: qte
+    given-names: 77
+#    orcid: https://orcid.org/0000-0001-9162-262X
+
+date-released: 2022-07-12
+keywords:
+  - ""
+license: "BSD-3-Clause"
+repository-code: "https://github.com/qte77/skeleton-app"
+title: app skeleton
+#doi:  # This DOI represents all versions, and will always resolve to the latest one.
+version: 1.0.0

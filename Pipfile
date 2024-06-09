@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+# hydra= "==1.2"
+# omegaconf= "2.2.2"
+
+[dev-packages]
+black = "*"
+flake8 = "*"
+isort = "*"
+pytest = "*"
+"pytest-cov" = "*"
+tox = "*"
+pre-commit = "*"
+
+[scripts]
+test = "pytest"
+
+[requires]
+python_version = "3.9"

@@ -1,0 +1,41 @@
+# [build-system]
+# requires = ["setuptools>=45.0", "setuptools_scm[toml]>=6.3.1", "wheel"]
+# build-backend = "setuptools.build_meta"
+
+[project]
+name = "Skeleton-App"
+
+# https://pycqa.github.io/isort/docs/configuration/config_files.html
+[tool.isort]
+profile = "black"
+line_length = 88
+src_paths = ["app", "tests"]
+
+# https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#configuration-via-a-file
+[tool.black]
+line_length = 88
+src_paths = ["app", "tests"]
+
+[tool.flake8]
+max-line-length = 88
+# extend-ignore = "E203"
+doctests = true
+statistics = true
+include = ["app", "tests"]
+max-complexity = 10
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-rfEX -svv --color=yes --code-highlight=yes --doctest-modules"
+testpaths = [
+    "tests"
+]
+# norecursedirs = [
+#    "tests/example_scripts"
+# ]
+# markers = [
+#    "requires_gpu: mark a test that requires a GPU to run.",
+#    "slow: mark a test that takes a long time to run.",
+# ]
+log_format = "%(asctime)s %(levelname)s %(message)s"
+log_date_format = "%Y-%m-%d %H:%M:%S"
