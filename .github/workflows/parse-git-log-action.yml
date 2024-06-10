@@ -1,0 +1,35 @@
+---
+name: parse-git-log-action
+on:
+  #schedule:
+    # https://crontab.guru/every-day
+    #- cron: "0 0 * * *"
+  workflow_dispatch:
+env:
+  #OUT_FILE: 'data/dummy-dirtree-python.md'
+  PY_VER: '3.10'
+  APP: 'app/app.py'
+jobs:
+  parseGitLogAction:
+    runs-on: ubuntu-latest
+    #permissions:
+    #  contents: write
+    steps:
+      - name: Checkout full branch
+        uses: actions/checkout@v4
+       # with:
+       #   sparse-checkout: ${{ env.OUT_FILE }}             
+      - name: Setup python ${{ env.PY_VER }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PY_VER }}
+      - name: Run ${{ env.APP }}
+        run: python ${{ env.APP }}
+      #- name: Push updated file back to main branch
+      #  run: |
+      #    git config --local user.email "action@github.com"
+      #    git config --local user.name "GitHub Action"
+      #    git add "$OUT_FILE"
+      #    git commit -m "Updated $OUT_FILE"
+      #    git push
+...
