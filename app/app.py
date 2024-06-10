@@ -36,7 +36,7 @@ def main() -> None:
     #repo = 'parse-git-log-action'
     #gh_ul = f"github.com/{user}/{repo}/compare/{commit_1}...{commit_2}"
     
-    diff_run = run(["git", "diff", "commit_1", "commit_2"], capture_output=True)
+    diff_run = run(["git", "diff", commit_1, commit_2], capture_output=True)
     print(diff_run)
     
     diff_output = diff_run.stdout.decode("utf-8")
