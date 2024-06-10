@@ -3,7 +3,7 @@
 """Entry point to the app"""
 
 from sys import exit
-import subprocess import run
+from subprocess import run
 
 
 def parse_git_diff(diff_output: str):
