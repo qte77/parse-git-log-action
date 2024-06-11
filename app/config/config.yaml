@@ -1,6 +1,0 @@
-#https://hydra.cc/ (Meta Platforms, Inc)
-#https://omegaconf.readthedocs.io/en/latest/usage.html
-defaults:
-  - cfg_1: cfg_1.1.yml
-  - cfg_2: cfg_2.1.yml
-  - optional dataset_model: ${cfg_1}_${cfg_2}
