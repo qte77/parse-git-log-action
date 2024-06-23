@@ -2,7 +2,7 @@ from datetime import datetime, timezone
 
 
 def _parseGitDiff(diffs: list) -> parsedDiffs: list:
-  """TODO"""
+  '''TODO'''
   summary = []
   hunk_literal = "@@"
   hunk_line_suffix = "Lines changed (start at, count): "
@@ -41,16 +41,22 @@ def _parseGitDiff(diffs: list) -> parsedDiffs: list:
   return summary
 
 
+def parse_git_diff(commit_1: str, commit_2: str) -> str:
+	'''TODO'''
+	diff_run = run(["git", "diff", commit_1, commit_2], capture_output=True)
+	return diff_run.stdout.decode("utf-8")
+
+
 def parse_git_diff(diff_output: str) -> str:
-		'''TODO'''
-		lines = diff_output.split('\n')
-		summary = []
+	'''TODO'''
+	lines = diff_output.split('\n')
+	summary = []
 	
 	# commits_last = git log --format="%H" -n commits_num
 	# commits_last_len = len(commits_last)
 	# commits_num = 20
 	# date_utc = datetime.now(timezone.utc)
-	# save_path = ."
+	# save_path = "."
 
 	print('parse_git_diff')
 	
