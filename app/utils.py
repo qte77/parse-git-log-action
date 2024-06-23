@@ -49,7 +49,7 @@ def get_git_diff(commit_1: str, commit_2: str) -> str:
 	return diff_run.stdout.decode("utf-8")
 
 
-def parse_git_diff(diff_output: list) -> str:
+def get_parsed_diff(diff_output: list) -> str:
 	'''TODO'''
 	summary = []
 	
