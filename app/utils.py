@@ -36,13 +36,13 @@ def _parseGitDiff(diffs: list) -> list:
       else:
         if "+" in line_start:
           # TODO escape char for regexp
-          rex_ls = line_start.replace('+', '\+')
+          # rex_ls = line_start.replace('+', '\+')
           # TODO replace regexp rex_ls in line with " "
           # summary.append(start_of_line[line_start] + rex_ls_replace_in_line)
 	return summary
 
 
-def parse_git_diff(commit_1: str, commit_2: str) -> str:
+def get_git_diff(commit_1: str, commit_2: str) -> str:
 	'''TODO'''
 	diff_run = run(["git", "diff", commit_1, commit_2], capture_output=True)
 	return diff_run.stdout.decode("utf-8")
@@ -59,7 +59,8 @@ def parse_git_diff(diff_output: list) -> str:
 	# save_path = "."
 
 	print('parse_git_diff')
-	
+
+	summary.append(f"\n{datetime.now(timezone.utc)}")
 	for line in diff_output:
 		if line.startswith('+'):
 			summary.append(f"Added line: {line[1:]}")
