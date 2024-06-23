@@ -3,14 +3,21 @@ Parse git-log Output Github Action
 
 Thanks `claude-3-opus-20240229` and [LMSYS ChatBot Arena](https://chat.lmsys.org) for first draft.
 
+Status
+---
+
+**[DRAFT]** **[WIP]** --> not fully implemented
+
+[![parse-git-log-action](https://github.com/qte77/parse-git-log-action/actions/workflows/parse-git-log-action.yml/badge.svg)](https://github.com/qte77/parse-git-log-action/actions/workflows/parse-git-log-action.yml)
+[![Ruff](https://github.com/qte77/parse-git-log-action/actions/workflows/ruff.yml/badge.svg)](https://github.com/qte77/parse-git-log-action/actions/workflows/ruff.yml)
+[![CodeQL](https://github.com/qte77/parse-git-log-action/actions/workflows/codeql.yml/badge.svg)](https://github.com/qte77/parse-git-log-action/actions/workflows/codeql.yml)
+[![Dependabot Updates](https://github.com/qte77/parse-git-log-action/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/qte77/parse-git-log-action/actions/workflows/dependabot/dependabot-updates)
+[![CodeFactor](https://www.codefactor.io/repository/github/qte77/parse-git-log-action/badge)](https://www.codefactor.io/repository/github/qte77/parse-git-log-action)
+[![Links (Fail Fast)](https://github.com/qte77/parse-git-log-action/actions/workflows/links-fail-fast.yml/badge.svg)](https://github.com/qte77/parse-git-log-action/actions/workflows/links-fail-fast.yml)
+
 <!--
-<a href="https://circleci.com/gh/badges/shields/tree/master">
-    <img src="https://img.shields.io/circleci/project/github/badges/shields/master" alt="build status">
-</a>
-<a href="https://circleci.com/gh/badges/daily-tests">
-    <img src="https://img.shields.io/circleci/project/github/badges/daily-tests?label=service%20tests"
-        alt="service-test status">
-</a>
+TODO cirrusci
+TODO pre-commit
 <a href="https://coveralls.io/github/badges/shields">
     <img src="https://img.shields.io/coveralls/github/badges/shields"
         alt="coverage">
@@ -26,17 +33,6 @@ Thanks `claude-3-opus-20240229` and [LMSYS ChatBot Arena](https://chat.lmsys.org
 ![codacy](https://img.shields.io/badge/codacy-B-green)
 ![semver](https://img.shields.io/badge/semver-2.0.0-blue)
 -->
-
-<!--
-[![CodeQL](https://github.com/qte77/ML-HF-WnB-MVP/actions/workflows/codeql.yml/badge.svg)](https://github.com/qte77/ML-HF-WnB-MVP/actions/workflows/codeql.yml)
-[![Lint Code Base](https://github.com/qte77/ML-HF-WnB-MVP/actions/workflows/linter.yml/badge.svg)](https://github.com/qte77/ML-HF-WnB-MVP/actions/workflows/linter.yml)
-[![Links (Fail Fast)](https://github.com/qte77/ML-HF-WnB-MVP/actions/workflows/links-fail-fast.yml/badge.svg)](https://github.com/qte77/ML-HF-WnB-MVP/actions/workflows/links-fail-fast.yml)
--->
-
-Status
----
-
-**[DRAFT]** **[WIP]** --> not fully implemented
 
 Quickstart
 ---
