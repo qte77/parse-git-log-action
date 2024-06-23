@@ -9,6 +9,7 @@ env:
   OUT_FILE: 'data/dummy-data.md'
   PY_VER: '3.10'
   APP: 'app/app.py'
+  DRY_RUN: True
 jobs:
   parseGitLogAction:
     runs-on: ubuntu-latest
