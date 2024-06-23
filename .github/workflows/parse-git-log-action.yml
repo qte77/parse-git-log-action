@@ -6,7 +6,7 @@ on:
     #- cron: "0 0 * * *"
   workflow_dispatch:
 env:
-  #OUT_FILE: 'data/dummy-dirtree-python.md'
+  OUT_FILE: 'data/dummy-data.md'
   PY_VER: '3.10'
   APP: 'app/app.py'
 jobs:
@@ -16,9 +16,7 @@ jobs:
     #  contents: write
     steps:
       - name: Checkout full branch
-        uses: actions/checkout@v4
-       # with:
-       #   sparse-checkout: ${{ env.OUT_FILE }}             
+        uses: actions/checkout@v4        
       - name: Setup python ${{ env.PY_VER }}
         uses: actions/setup-python@v5
         with:
