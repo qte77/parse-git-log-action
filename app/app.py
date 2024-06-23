@@ -25,7 +25,7 @@ def main() -> None:
 
     if DRY_RUN:
         print(summary)
-    else DRY_RUN:
+    else:
         if not OUT_FILE.parent.exists():
           # folder needs to exist before open() context
           OUT_FILE.parent.mkdir(parents=True, exist_ok=True)
