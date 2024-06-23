@@ -23,22 +23,23 @@ def _parseGitDiff(diffs: list) -> list:
 	# TODO sort descending, get unique
 	sol_key_len = len(start_of_line)
 	for line in diffs:
-    for sol in sol_key_len:
-      line_start = str(line[:sol])
-      if line_start.startswith(hunk_literal):
-        hunk = line.split(hunk_literal).strip()
-        range = hunk[1].split()
-        summary.append(
-          hunk_line_suffix + start_of_line[hunk_literal][0] + \
-          range[0] + hunk_line_sep + \
-          start_of_line[hunk_literal][1] + range[1]
-        )
-      else:
-        if "+" in line_start:
-          # TODO escape char for regexp
-          # rex_ls = line_start.replace('+', '\+')
-          # TODO replace regexp rex_ls in line with " "
-          # summary.append(start_of_line[line_start] + rex_ls_replace_in_line)
+		for sol in sol_key_len:
+			line_start = str(line[:sol])
+			if line_start.startswith(hunk_literal):
+				hunk = line.split(hunk_literal).strip()
+				range = hunk[1].split()
+				summary.append(
+					hunk_line_suffix + start_of_line[hunk_literal][0] + \
+					range[0] + hunk_line_sep + \
+					start_of_line[hunk_literal][1] + range[1]
+				)
+			else:
+				if "+" in line_start:
+					pass
+					# TODO escape char for regexp
+					# rex_ls = line_start.replace('+', '\+')
+					# TODO replace regexp rex_ls in line with " "
+					# summary.append(start_of_line[line_start] + rex_ls_replace_in_line)
 	return summary
 
 
