@@ -3,7 +3,6 @@
 from os import getenv
 from sys import exit
 from pathlib import Path
-from subprocess import run
 from utils import get_parsed_diff, get_git_diff
 
 
@@ -11,7 +10,7 @@ def main() -> None:
     '''Main function of the app'''
     # TODO assert env OUT_FILE can be converted to POSIX PAth
     OUT_FILE = Path(getenv("OUT_FILE", 'data/dummy-data.md'))
-    CMD_HIGHLIGHT = str(getenv("CMD_HIGHLIGHT", 'sh'))
+    # CMD_HIGHLIGHT = str(getenv("CMD_HIGHLIGHT", 'sh'))
     # TODO check getenv for bool
     DRY_RUN  = bool(getenv("CMD_HIGHLIGHT", False))
     
