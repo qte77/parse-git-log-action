@@ -1,30 +1,8 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 """Entry point to the app"""
 
 from sys import exit
 from subprocess import run
-
-
-def parse_git_diff(diff_output: str):
-    '''TODO'''
-    lines = diff_output.split('\n')
-    summary = []
-
-    print('parse_git_diff')
-    
-    for line in lines:
-        if line.startswith('+'):
-            summary.append(f"Added line: {line[1:]}")
-        elif line.startswith('-'):
-            summary.append(f"Removed line: {line[1:]}")
-        elif line.startswith('@@'):
-            hunk_info = line.split('@@')
-            original_range = hunk_info[1].strip().split(' ')[1]
-            modified_range = hunk_info[2].strip()
-            summary.append(f"Changes in lines {original_range} of the original file and {modified_range} of the modified file")
-
-    return '\n'.join(summary)
+from utils import get_parsed_diff
 
 
 def main() -> None:
@@ -41,8 +19,8 @@ def main() -> None:
     
     diff_output = diff_run.stdout.decode("utf-8")
     print(diff_output)
-    
-    summary = parse_git_diff(diff_output)
+
+    summary = get_parsed_diff(diff_output)
     print(summary)
 
 
