@@ -1,27 +1,28 @@
-from datetime import datetime, timezone 
+from datetime import datetime, timezone
+from subprocess import run
 
 
 def _parseGitDiff(diffs: list) -> list:
-  '''TODO'''
-  summary = []
-  hunk_literal = "@@"
-  hunk_line_suffix = "Lines changed (start at, count): "
-  hunk_line_sep = " "
-  start_of_line = {
-    "similarity": "similar% ",
-    "new file": "created  ",
-    "deleted": "deleted  ",
-    "rename": "rename   ",
-    "diff --git": "difference between",
-    "---": "renamed/deleted from",
-    "+++": "renamed/deleted to  ",
-    hunk_literal: ["source ", "new file "],
-    "-": "removed  ",
-    "+": "added    "
-  }
-  # TODO sort descending, get unique
+	'''TODO'''
+	summary = []
+	hunk_literal = "@@"
+	hunk_line_suffix = "Lines changed (start at, count): "
+	hunk_line_sep = " "
+	start_of_line = {
+		"similarity": "similar% ",
+		"new file": "created  ",
+		"deleted": "deleted  ",
+		"rename": "rename   ",
+		"diff --git": "difference between",
+		"---": "renamed/deleted from",
+		"+++": "renamed/deleted to  ",
+		hunk_literal: ["source ", "new file "],
+		"-": "removed  ",
+		"+": "added    "
+	}
+	# TODO sort descending, get unique
 	sol_key_len = len(start_of_line)
-  for line in diffs:
+	for line in diffs:
     for sol in sol_key_len:
       line_start = str(line[:sol])
       if line_start.startswith(hunk_literal):
@@ -38,7 +39,7 @@ def _parseGitDiff(diffs: list) -> list:
           rex_ls = line_start.replace('+', '\+')
           # TODO replace regexp rex_ls in line with " "
           # summary.append(start_of_line[line_start] + rex_ls_replace_in_line)
-  return summary
+	return summary
 
 
 def parse_git_diff(commit_1: str, commit_2: str) -> str:
