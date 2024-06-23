@@ -1,14 +1,13 @@
-"""parse commits"""
 from datetime import datetime, timezone 
 
 
 def _parseGitDiff(diffs: list) -> parsedDiffs: list:
-	""""""
-	summary = []
-	hunk_literal = "@@"
-	hunk_line_suffix = "Lines changed (start at, count): "
+  """TODO"""
+  summary = []
+  hunk_literal = "@@"
+  hunk_line_suffix = "Lines changed (start at, count): "
   hunk_line_sep = " "
-	start_of_line = {
+  start_of_line = {
     "similarity": "similar% ",
     "new file": "created  ",
     "deleted": "deleted  ",
@@ -42,11 +41,29 @@ def _parseGitDiff(diffs: list) -> parsedDiffs: list:
   return summary
 
 
-commits_last = git log --format="%H" -n commits_num
-commits_last_len = len(commits_last)
+def parse_git_diff(diff_output: str) -> str:
+		'''TODO'''
+		lines = diff_output.split('\n')
+		summary = []
+	
+	# commits_last = git log --format="%H" -n commits_num
+	# commits_last_len = len(commits_last)
+	# commits_num = 20
+	# date_utc = datetime.now(timezone.utc)
+	# save_path = ."
 
-
-commits_num = 20
-date_utc = datetime.now(timezone.utc)
-save_path = ."
-
+	print('parse_git_diff')
+	
+	for line in lines:
+		if line.startswith('+'):
+			summary.append(f"Added line: {line[1:]}")
+		elif line.startswith('-'):
+			summary.append(f"Removed line: {line[1:]}")
+		elif line.startswith('@@'):
+			hunk_info = line.split('@@')
+			original_range = hunk_info[1].strip().split(' ')[1]
+			modified_range = hunk_info[2].strip()
+			summary.append(f"Changes in lines {original_range} of the original file and {modified_range} of the modified file")
+	
+	return '\n'.join(summary)
+	
